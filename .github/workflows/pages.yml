@@ -1,0 +1,80 @@
+name: Deploy LPC Dojo to GitHub Pages
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'web/**'
+      - 'tasks/all_tasks.jsonl'
+      - 'lpcbench/build_quiz_data.py'
+      - '.github/workflows/pages.yml'
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Build quiz bundle from tasks/all_tasks.jsonl
+        run: |
+          PYTHONPATH=. python3 -m lpcbench.build_quiz_data
+
+      - name: Verify web assets
+        run: |
+          set -euo pipefail
+          node --check web/app.js
+          node --check web/wasm_runner.js
+          node --check web/wasm_worker.js
+          for f in web/index.html web/app.js web/wasm_runner.js web/wasm_worker.js \
+                   web/quiz_data.js web/quiz_data.json \
+                   web/wasm/fluffos.js web/wasm/fluffos.wasm \
+                   web/wasm/testsuite_base.js web/wasm/testsuite_base.json; do
+            test -s "$f"
+          done
+
+      - name: Stage static site
+        run: |
+          set -euo pipefail
+          rm -rf _site
+          mkdir -p _site/wasm
+          cp web/index.html web/app.js web/wasm_runner.js web/wasm_worker.js \
+             web/quiz_data.js web/quiz_data.json _site/
+          cp web/wasm/fluffos.js web/wasm/fluffos.wasm \
+             web/wasm/testsuite_base.js web/wasm/testsuite_base.json _site/wasm/
+          touch _site/.nojekyll
+
+      - uses: actions/configure-pages@v5
+        with:
+          enablement: true
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

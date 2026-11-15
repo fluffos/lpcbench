@@ -1,0 +1,3 @@
+mapping make_server_config(string host, int port) {
+    return ([ "host": host, "port": port ]);
+}

@@ -1,0 +1,3 @@
+int get_timeout(mapping cfg, int default_timeout) {
+    return cfg["timeout"] ?? default_timeout;
+}

@@ -1,0 +1,10 @@
+#include <tests.h>
+inherit __DIR__ "subject";
+
+void do_tests() {
+    ASSERT_EQ("", get_last_message());
+    catch_tell("A goblin appears!\n");
+    ASSERT_EQ("A goblin appears!\n", get_last_message());
+    catch_tell("It leaves.\n");
+    ASSERT_EQ("It leaves.\n", get_last_message());
+}

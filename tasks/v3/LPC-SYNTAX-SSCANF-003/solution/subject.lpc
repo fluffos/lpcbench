@@ -1,0 +1,5 @@
+mapping parse_endpoint(string line) {
+    mapping m = ([]);
+    sscanf(line, "%s:%d", m["host"], m["port"]);
+    return m;
+}

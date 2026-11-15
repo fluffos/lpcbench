@@ -1,0 +1,25 @@
+__pycache__/
+*.pyc
+*.egg-info/
+build/
+dist/
+
+# Local only: run scratch, retired code and logs
+.work/
+attic/
+
+# Results: publish LOG.md and each v3 run's meta.json and trials.jsonl
+results/*
+!results/v3/
+results/v3/*/transcripts/
+results/v3/*/trials.pre_regrade.jsonl
+results/v3/*/trials.pre_resume.jsonl
+# Holds local home-directory paths
+results/v3/pi_self_pilot_20261104_231028/
+
+# Nginx runtime files
+web/*.pid
+web/*.log
+web/temp/
+web/nginx_user.conf
+results/v3/*/proxy.jsonl

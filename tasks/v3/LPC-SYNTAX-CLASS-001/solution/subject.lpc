@@ -1,0 +1,11 @@
+class Item {
+    string name;
+    int weight;
+}
+
+class Item make_item(string name, int weight) {
+    class Item it = new(class Item);
+    it.name = name;
+    it.weight = weight;
+    return it;
+}

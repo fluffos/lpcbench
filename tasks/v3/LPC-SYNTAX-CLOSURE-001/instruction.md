@@ -1,0 +1,1 @@
+Implement 'int *increment_all(int *nums)' that returns a new array with all elements incremented by 1

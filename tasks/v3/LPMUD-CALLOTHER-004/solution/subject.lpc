@@ -1,0 +1,6 @@
+void existing_method() {}
+
+int method_exists(object ob, string func) {
+    mixed res = call_other(ob, func);
+    return !undefinedp(res);
+}

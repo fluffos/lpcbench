@@ -1,0 +1,6 @@
+#include <tests.h>
+inherit __DIR__ "subject";
+
+void do_tests() {
+    ASSERT_EQ(20, compute_total());
+}

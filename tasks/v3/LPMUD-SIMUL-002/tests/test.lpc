@@ -1,0 +1,14 @@
+#include <tests.h>
+inherit __DIR__ "subject";
+
+string got = "";
+void catch_tell(string s) { got += s; }
+
+void do_tests() {
+    object tp;
+    SAVETP;
+    enable_commands();
+    direct_write("hello");
+    RESTORETP;
+    ASSERT_EQ("hello", got);
+}

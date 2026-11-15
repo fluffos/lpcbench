@@ -1,0 +1,1 @@
+Implement 'mapping scale_values(mapping m, int multiplier)' that multiplies each integer value in 'm' and returns 'm'.

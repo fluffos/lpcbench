@@ -1,0 +1,3 @@
+mapping merge_configs(mapping defaults, mapping overrides) {
+    return defaults + overrides;
+}

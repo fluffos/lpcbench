@@ -1,0 +1,7 @@
+inherit __DIR__ "lib";
+
+int query_rate() { return 5; }
+
+int fee(int amount) {
+    return amount * query_rate() / 100;
+}

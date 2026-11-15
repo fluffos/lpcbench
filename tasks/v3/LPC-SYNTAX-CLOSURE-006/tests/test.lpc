@@ -1,0 +1,7 @@
+#include <tests.h>
+inherit __DIR__ "subject";
+
+void do_tests() {
+    ASSERT_EQ(100, resolve_value(100, 5));
+    ASSERT_EQ(15, resolve_value((: $1 * 3 :), 5));
+}

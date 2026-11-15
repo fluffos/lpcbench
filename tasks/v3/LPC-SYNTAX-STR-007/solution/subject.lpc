@@ -1,0 +1,3 @@
+string format_stats(string player_name, int hp) {
+    return `[${player_name}: ${hp}HP]`;
+}

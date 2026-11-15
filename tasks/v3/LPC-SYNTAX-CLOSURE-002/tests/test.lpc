@@ -1,0 +1,7 @@
+#include <tests.h>
+inherit __DIR__ "subject";
+
+void do_tests() {
+    function pre = make_prefixer("Sir ");
+    ASSERT_EQ("Sir Lancelot", evaluate(pre, "Lancelot"));
+}

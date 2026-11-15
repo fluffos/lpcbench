@@ -1,0 +1,6 @@
+int ran = 0;
+
+int handle_fp(string arg) {
+    ran = 1;
+    return 1;
+}

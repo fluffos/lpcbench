@@ -1,0 +1,1 @@
+Implement 'string get_banner()' that returns a multi-line string using the '@BANNER' text block syntax. The block must contain the line 'SYSTEM READY'.

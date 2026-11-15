@@ -1,0 +1,7 @@
+string join_strings(string *parts) {
+    string acc = "";
+    foreach (string p in parts) {
+        acc += p;
+    }
+    return acc;
+}

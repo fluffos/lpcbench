@@ -1,0 +1,4 @@
+int *splice_middle(int *arr, int *replacement) {
+    arr[1..2] = replacement;
+    return arr;
+}

@@ -1,0 +1,8 @@
+// corpse.lpc: what a living leaves behind.
+inherit __DIR__ "container";
+
+void set_of(string who) {
+    set_name("corpse");
+    set_short("the corpse of " + who);
+    set_weight(50);
+}

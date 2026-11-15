@@ -1,0 +1,26 @@
+#include <tests.h>
+mixed record_notify_fail(mixed msg);
+#define notify_fail record_notify_fail
+#include "subject.lpc"
+#undef notify_fail
+
+mixed *failed = ({ });
+mixed record_notify_fail(mixed msg) {
+    failed += ({ msg });
+    return efun::notify_fail(msg);
+}
+
+void do_tests() {
+    ASSERT_EQ(0, do_unlock("chest"));
+    ASSERT_EQ(1, sizeof(failed));
+    ASSERT_EQ("You need a key.\n", failed[0]);
+    ASSERT_EQ(1, do_unlock("door"));
+    ASSERT_EQ(1, sizeof(failed));
+    ASSERT_EQ(0, do_unlock(""));
+    ASSERT_EQ(2, sizeof(failed));
+    ASSERT_EQ("You need a key.\n", failed[1]);
+    ASSERT_EQ(0, do_unlock("Door"));
+    ASSERT_EQ(3, sizeof(failed));
+    ASSERT_EQ(1, do_unlock("door"));
+    ASSERT_EQ(3, sizeof(failed));
+}

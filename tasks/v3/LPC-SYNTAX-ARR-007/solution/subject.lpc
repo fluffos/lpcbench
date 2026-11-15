@@ -1,0 +1,3 @@
+string join_csv(string *columns) {
+    return implode(columns, ", ");
+}

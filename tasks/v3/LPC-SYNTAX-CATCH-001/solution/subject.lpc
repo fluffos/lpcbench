@@ -1,0 +1,6 @@
+int safe_divide(int a, int b, int default_val) {
+    int res;
+    mixed err = catch(res = a / b);
+    if (err) return default_val;
+    return res;
+}

@@ -1,0 +1,14 @@
+string search_target = "";
+
+int do_search(string arg) {
+    if (!arg) {
+        search_target = "bare_verb";
+        return 1;
+    }
+    search_target = arg;
+    return 1;
+}
+
+void init() {
+    add_action((: do_search :), "search");
+}

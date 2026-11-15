@@ -1,0 +1,7 @@
+#include <tests.h>
+inherit __DIR__ "subject";
+
+void do_tests() {
+    function f = get_sizeof_efun();
+    ASSERT_EQ(3, evaluate(f, ({ 1, 2, 3 })));
+}

@@ -1,0 +1,7 @@
+object get_actor() {
+    return this_player();
+}
+
+int is_self_acting() {
+    return (this_player() == this_object());
+}

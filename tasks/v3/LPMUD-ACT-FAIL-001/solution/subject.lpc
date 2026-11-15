@@ -1,0 +1,6 @@
+int do_unlock(string arg) {
+    if (arg != "door") {
+        return notify_fail("You need a key.\n");
+    }
+    return 1;
+}

@@ -1,0 +1,5 @@
+inherit __DIR__ "base";
+
+void create() {
+    name = "orc";
+}

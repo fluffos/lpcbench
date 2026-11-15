@@ -1,0 +1,3 @@
+nomask int is_admin() {
+    return 1;
+}

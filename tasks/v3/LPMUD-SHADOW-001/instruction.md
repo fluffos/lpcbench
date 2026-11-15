@@ -1,0 +1,1 @@
+Implement 'object get_active_shadow(object target)' that uses 'shadow(target, 0)' to query the currently attached shadow on 'target'.

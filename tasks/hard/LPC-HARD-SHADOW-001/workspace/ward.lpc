@@ -1,0 +1,17 @@
+// ward.lpc
+inherit __DIR__ "effect";
+
+private int absorbed = 0;
+
+string query_effect() { return "ward"; }
+
+void damage(int n, object from) {
+    int take = n > 2 ? 2 : n;
+    int rest = n - take;
+
+    absorbed += take;
+    if (absorbed >= 6)
+        expire();
+    if (rest > 0)
+        query_shadowing(this_object())->damage(rest, from);
+}

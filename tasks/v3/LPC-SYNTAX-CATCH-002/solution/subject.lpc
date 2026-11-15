@@ -1,0 +1,8 @@
+int safe_indexing(int *arr, int index, int fallback) {
+    int val;
+    mixed err = catch {
+        val = arr[index];
+    };
+    if (err) return fallback;
+    return val;
+}

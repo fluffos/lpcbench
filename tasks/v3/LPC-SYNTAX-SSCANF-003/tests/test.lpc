@@ -1,0 +1,8 @@
+#include <tests.h>
+inherit __DIR__ "subject";
+
+void do_tests() {
+    mapping res = parse_endpoint("localhost:8080");
+    ASSERT_EQ("localhost", res["host"]);
+    ASSERT_EQ(8080, res["port"]);
+}

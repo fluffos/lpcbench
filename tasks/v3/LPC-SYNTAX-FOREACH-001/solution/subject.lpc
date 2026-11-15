@@ -1,0 +1,7 @@
+int sum_mapping_values(mapping m) {
+    int total = 0;
+    foreach (string k, int v in m) {
+        total += v;
+    }
+    return total;
+}

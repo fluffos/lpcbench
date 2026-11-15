@@ -1,0 +1,7 @@
+#include <tests.h>
+inherit __DIR__ "subject";
+
+void do_tests() {
+    int here = sizeof(previous_object(-1));
+    ASSERT_EQ(here + 1, this_object()->get_call_depth());
+}

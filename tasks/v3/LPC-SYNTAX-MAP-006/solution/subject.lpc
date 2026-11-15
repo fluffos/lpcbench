@@ -1,0 +1,4 @@
+void set_default_flags(mapping cfg) {
+    cfg["retries"] ??= 3;
+    cfg["verbose"] ??= 0;
+}

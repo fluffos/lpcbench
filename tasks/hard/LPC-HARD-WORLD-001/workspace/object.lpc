@@ -1,0 +1,70 @@
+// object.lpc: anything that can exist in the world.
+//
+// Contract
+//  * id(str) is true for the name and every alias, compared case-insensitively.
+//  * query_short() is what other objects show for this object. Shadows and
+//    subclasses may change it, so code that needs the visible name must ask
+//    through query_short(), never read the variable.
+//  * move(dest) puts this object in dest. dest may be an object or a path.
+//    It returns MOVE_OK, or a negative MOVE_* code and leaves the object
+//    exactly where it was. Both containers' load figures stay correct.
+//  * remove() takes the object out of the world: its container's load
+//    is updated, then it is destructed. Returns 1.
+#include "defs.h"
+
+private string name = "thing";
+private string *aliases = ({});
+private string short_desc = "a thing";
+private string long_desc = "You see nothing special.\n";
+private int weight = 1;
+private int value = 0;
+private int gettable = 1;
+
+void set_name(string s) { name = s; }
+string query_name() { return name; }
+void set_aliases(string *a) { aliases = a; }
+string *query_aliases() { return aliases; }
+void set_short(string s) { short_desc = s; }
+string query_short() { return short_desc; }
+void set_long(string s) { long_desc = s; }
+string query_long() { return long_desc; }
+void set_weight(int n) { weight = n; }
+int query_weight() { return weight; }
+void set_value(int n) { value = n; }
+int query_value() { return value; }
+void set_gettable(int n) { gettable = n; }
+int query_gettable() { return gettable; }
+
+int id(string s) {
+    if (!s) return 0;
+    s = lower_case(s);
+    return s == name || member_array(s, map(aliases, (: lower_case :))) != -1;
+}
+
+// The weight this object adds to whatever holds it. Containers add their contents.
+int query_total_weight() { return query_weight(); }
+
+int move(mixed dest) {
+    object from = environment();
+    int rc;
+
+    if (stringp(dest)) {
+        if (catch(dest = load_object(dest)) || !dest)
+            return MOVE_NO_DEST;
+    }
+    if (!objectp(dest))
+        return MOVE_NO_DEST;
+    if (from)
+        from->release_object(this_object());
+    rc = dest->can_receive(this_object());
+    if (rc != MOVE_OK)
+        return rc;
+    move_object(dest);
+    dest->receive_object(this_object());
+    return MOVE_OK;
+}
+
+int remove() {
+    destruct(this_object());
+    return 1;
+}

@@ -1,0 +1,4 @@
+void register_guard(string name) {
+    enable_commands();
+    set_living_name(name);
+}

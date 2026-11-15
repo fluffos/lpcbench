@@ -1,0 +1,6 @@
+inherit __DIR__ "base";
+
+void create() {
+    ::create();
+    name = "orc";
+}

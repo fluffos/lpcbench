@@ -1,0 +1,17 @@
+int first_ran = 0;
+int second_ran = 0;
+
+int accept_spell(string arg) {
+    second_ran = 1;
+    return 1;
+}
+
+int reject_spell(string arg) {
+    first_ran = 1;
+    return 0; // fallthrough
+}
+
+void init() {
+    add_action((: accept_spell :), "cast");
+    add_action((: reject_spell :), "cast");
+}

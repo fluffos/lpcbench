@@ -1,0 +1,5 @@
+int chain_notify(mixed m1, mixed m2) {
+    notify_fail(m1);
+    return notify_fail(m2);
+}
+

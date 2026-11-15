@@ -1,0 +1,3 @@
+int is_exported_simul_efun(string modifier) {
+    return (modifier == "public");
+}

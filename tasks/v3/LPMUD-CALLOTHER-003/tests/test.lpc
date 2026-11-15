@@ -1,0 +1,10 @@
+#include <tests.h>
+inherit __DIR__ "subject";
+
+void do_tests() {
+    object *arr = ({ this_object(), this_object() });
+    int *res = broadcast_get_val(arr);
+    ASSERT_EQ(2, sizeof(res));
+    ASSERT_EQ(7, res[0]);
+    ASSERT_EQ(7, res[1]);
+}

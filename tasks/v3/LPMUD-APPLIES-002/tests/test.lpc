@@ -1,0 +1,15 @@
+#include <tests.h>
+inherit __DIR__ "subject";
+
+void do_tests() {
+    disable_ticks();
+    ASSERT_EQ(0, query_heart_beat(this_object()));
+    enable_ticks();
+    ASSERT_EQ(1, query_heart_beat(this_object()));
+    heart_beat();
+    ASSERT_EQ(1, query_ticks());
+    heart_beat();
+    ASSERT_EQ(2, query_ticks());
+    disable_ticks();
+    ASSERT_EQ(0, query_heart_beat(this_object()));
+}

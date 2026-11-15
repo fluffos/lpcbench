@@ -1,0 +1,6 @@
+string strip_trailing_newline(string s) {
+    if (strlen(s) > 0 && s[<1] == '\n') {
+        return s[0..<2];
+    }
+    return s;
+}

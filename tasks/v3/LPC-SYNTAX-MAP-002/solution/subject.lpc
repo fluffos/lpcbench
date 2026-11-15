@@ -1,0 +1,6 @@
+mapping remove_sensitive_keys(mapping m, string *keys_to_remove) {
+    foreach (string k in keys_to_remove) {
+        map_delete(m, k);
+    }
+    return m;
+}

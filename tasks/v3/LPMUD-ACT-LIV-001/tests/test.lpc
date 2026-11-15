@@ -1,0 +1,14 @@
+#include <tests.h>
+inherit __DIR__ "subject";
+
+void do_tests() {
+    object tp;
+    SAVETP;
+    ASSERT_EQ(0, find_living("gatekeeper"));
+    register_guard("gatekeeper");
+    ASSERT(living(this_object()));
+    ASSERT_EQ(this_object(), find_living("gatekeeper"));
+    ASSERT_EQ(0, find_living("nobody_here"));
+    disable_commands();
+    RESTORETP;
+}

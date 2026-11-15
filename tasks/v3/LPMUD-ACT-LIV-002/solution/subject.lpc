@@ -1,0 +1,9 @@
+void enable_living(string name) {
+    enable_commands();
+    set_living_name(name);
+}
+
+void disable_living() {
+    disable_commands();
+}
+

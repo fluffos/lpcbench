@@ -1,0 +1,11 @@
+{
+  "recorded_by": "LB4, 2026-11-12, from the coordinator",
+  "model": "qwen38-flash (Qwen3.8-Flash)",
+  "server_build": "llama-sm60 30b6384e3",
+  "router": "SV1 version plus the move-cooldown crash fix (rolled back to the stable version)",
+  "generation_cap_tokens": 16384,
+  "generation_cap_behaviour": "requests above 16384 generated tokens stop with finish_reason length",
+  "stack_changes_since_last_full_run": ["context-leak fix", "warm host prompt cache", "hang fix plus watchdog", "16K generation cap", "router rollback to the stable version"],
+  "cluster_slots_discovered": {"gpu-40": 1, "gpu-50": 1, "gpu-60": 1},
+  "throne_load_log": "~/.cache/lpc-scratch/lb4/throne_load.log (copied as throne_load.log at the end)"
+}

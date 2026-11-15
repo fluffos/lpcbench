@@ -1,0 +1,7 @@
+mapping parse_kv_pair(string line) {
+    string k, v;
+    if (sscanf(line, "%s=%s", k, v) == 2) {
+        return ([ k : v ]);
+    }
+    return ([]);
+}

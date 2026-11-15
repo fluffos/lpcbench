@@ -1,0 +1,2 @@
+// rate table
+int query_rate() { return 5; }

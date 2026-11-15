@@ -1,0 +1,8 @@
+inherit "/inherit/tests";
+
+int called_parent = 0;
+
+void describe_test(string desc) {
+    ::describe_test(desc);
+    called_parent = 1;
+}

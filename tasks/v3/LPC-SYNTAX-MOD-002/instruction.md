@@ -1,0 +1,1 @@
+Implement a security critical function 'nomask int is_admin()' that returns 1. Use the 'nomask' modifier to protect it from being overridden.

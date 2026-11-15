@@ -1,0 +1,1 @@
+Implement 'void move_to_location(object dest)' that moves 'this_object()' into 'dest' using 'move_object(dest)'.

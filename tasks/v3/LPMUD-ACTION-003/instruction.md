@@ -1,0 +1,1 @@
+Implement 'object get_actor()' that returns 'this_player()', and 'int is_self_acting()' that returns (this_player() == this_object()).

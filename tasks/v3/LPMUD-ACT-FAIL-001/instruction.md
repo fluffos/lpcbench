@@ -1,0 +1,1 @@
+Implement 'int do_unlock(string arg)' that returns 'notify_fail("You need a key.\n")' if arg != "door".

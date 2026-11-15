@@ -1,0 +1,33 @@
+#include <tests.h>
+inherit __DIR__ "subject";
+
+int fallback_ran = 0;
+int fallback(string arg) { fallback_ran++; return 1; }
+
+void do_tests() {
+    object tp;
+    SAVETP;
+    enable_commands();
+    add_action("fallback", "open");
+    init();
+    RESTORETP;
+    ASSERT_EQ(0, chest_open);
+    command("open door");
+    ASSERT_EQ(1, fallback_ran);
+    ASSERT_EQ(0, chest_open);
+    command("open");
+    ASSERT_EQ(2, fallback_ran);
+    ASSERT_EQ(0, chest_open);
+    command("open chests");
+    ASSERT_EQ(3, fallback_ran);
+    ASSERT_EQ(0, chest_open);
+    command("open the chest");
+    ASSERT_EQ(4, fallback_ran);
+    ASSERT_EQ(0, chest_open);
+    command("open Chest");
+    ASSERT_EQ(5, fallback_ran);
+    ASSERT_EQ(0, chest_open);
+    command("open chest");
+    ASSERT_EQ(1, chest_open);
+    ASSERT_EQ(5, fallback_ran);
+}

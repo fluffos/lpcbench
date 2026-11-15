@@ -1,0 +1,4 @@
+varargs int compute_fee(int base, int surcharge) {
+    if (!surcharge) surcharge = 10;
+    return base + surcharge;
+}

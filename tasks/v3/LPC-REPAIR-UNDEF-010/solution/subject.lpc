@@ -1,0 +1,5 @@
+string stock_status(mapping stock, string item) {
+    if (undefinedp(stock[item])) return "unknown";
+    if (!stock[item]) return "sold out";
+    return "in stock";
+}

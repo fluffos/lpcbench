@@ -1,0 +1,3 @@
+string format_error_report(mapping err_info) {
+    return sprintf("[ERROR in %s:%d] %s", err_info["file"], err_info["line"], err_info["error"]);
+}

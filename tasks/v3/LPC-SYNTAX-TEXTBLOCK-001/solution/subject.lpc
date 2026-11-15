@@ -1,0 +1,6 @@
+string get_banner() {
+    return @BANNER
+=== FLUFFOS LPC ===
+SYSTEM READY
+BANNER;
+}

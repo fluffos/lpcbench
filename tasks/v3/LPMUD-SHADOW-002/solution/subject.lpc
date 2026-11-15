@@ -1,0 +1,3 @@
+nomask int get_security_level() {
+    return 100;
+}

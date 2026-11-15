@@ -1,0 +1,8 @@
+#include <tests.h>
+inherit __DIR__ "subject";
+
+void do_tests() {
+    class Hero h1 = new(class Hero, title: "A", hp: 100);
+    class Hero h2 = new(class Hero, title: "B", hp: 80);
+    ASSERT_EQ(20, compare_hp(h1, h2));
+}

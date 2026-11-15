@@ -1,0 +1,8 @@
+class Hero {
+    string title;
+    int hp;
+}
+
+int compare_hp(class Hero a, class Hero b) {
+    return a->hp - b->hp;
+}

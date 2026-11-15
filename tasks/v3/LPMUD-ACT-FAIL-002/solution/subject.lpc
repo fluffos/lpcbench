@@ -1,0 +1,7 @@
+string dynamic_fail_msg() {
+    return "[Dynamic Failure: Target not found]\n";
+}
+
+int trigger_lazy_fail() {
+    return notify_fail((: dynamic_fail_msg :));
+}

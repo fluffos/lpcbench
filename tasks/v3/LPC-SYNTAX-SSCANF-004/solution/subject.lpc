@@ -1,0 +1,5 @@
+int extract_second_int(string line) {
+    int score = 0;
+    sscanf(line, "ID: %*d SCORE: %d", score);
+    return score;
+}

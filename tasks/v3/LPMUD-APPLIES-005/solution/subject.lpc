@@ -1,0 +1,14 @@
+int reset_count = 0;
+
+void refresh_monsters() {
+    // Respawn logic
+}
+
+void reset() {
+    reset_count++;
+    refresh_monsters();
+}
+
+int query_resets() {
+    return reset_count;
+}

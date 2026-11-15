@@ -1,0 +1,7 @@
+#include <tests.h>
+inherit __DIR__ "subject";
+
+void do_tests() {
+    string *words = split_words("look at sword");
+    ASSERT_EQ(({ "look", "at", "sword" }), words);
+}

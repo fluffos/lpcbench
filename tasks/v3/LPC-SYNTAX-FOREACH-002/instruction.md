@@ -1,0 +1,1 @@
+Implement 'string join_strings(string *parts)' that concatenates each string in 'parts' into a single string

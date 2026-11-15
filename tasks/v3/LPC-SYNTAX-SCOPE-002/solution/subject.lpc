@@ -1,0 +1,7 @@
+int sizeof(mixed arg) {
+    return -1;
+}
+
+int get_real_size(mixed *arr) {
+    return efun::sizeof(arr);
+}

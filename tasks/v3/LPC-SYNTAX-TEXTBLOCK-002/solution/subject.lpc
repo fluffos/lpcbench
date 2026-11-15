@@ -1,0 +1,7 @@
+string *get_help_topics() {
+    return @@TOPICS
+commands
+skills
+spells
+TOPICS;
+}

@@ -1,0 +1,4 @@
+string get_last_three_chars(string s) {
+    if (strlen(s) < 3) return s;
+    return s[<3..<1];
+}

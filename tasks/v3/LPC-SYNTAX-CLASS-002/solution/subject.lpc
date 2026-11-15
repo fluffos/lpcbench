@@ -1,0 +1,8 @@
+class Coord {
+    int x;
+    int y;
+}
+
+class Coord make_coord(int x, int y) {
+    return new(class Coord, x: x, y: y);
+}

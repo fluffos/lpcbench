@@ -1,0 +1,6 @@
+// mask.lpc
+inherit __DIR__ "effect";
+
+string query_effect() { return "mask"; }
+
+string query_short() { return "A masked stranger"; }

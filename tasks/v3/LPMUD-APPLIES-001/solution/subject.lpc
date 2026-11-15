@@ -1,0 +1,3 @@
+int id(string str) {
+    return (str == "sword" || str == "blade");
+}

@@ -1,0 +1,7 @@
+void write(string str) {
+    // shadows efun write
+}
+
+void direct_write(string str) {
+    efun::write(str);
+}

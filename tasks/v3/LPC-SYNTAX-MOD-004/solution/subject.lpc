@@ -1,0 +1,7 @@
+varargs int sum_all(int base, int *extra...) {
+    int total = base;
+    foreach (int x in extra) {
+        total += x;
+    }
+    return total;
+}

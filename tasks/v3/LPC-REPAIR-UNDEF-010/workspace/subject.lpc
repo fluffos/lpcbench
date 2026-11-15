@@ -1,0 +1,4 @@
+string stock_status(mapping stock, string item) {
+    if (!stock[item]) return "unknown";
+    return "in stock";
+}

@@ -1,0 +1,1 @@
+Implement 'varargs int compute_fee(int base, int surcharge)' where 'surcharge' defaults to 10 if not provided (i.e. if 0).

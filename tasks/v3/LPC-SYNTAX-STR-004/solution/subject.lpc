@@ -1,0 +1,3 @@
+string *split_words(string sentence) {
+    return explode(sentence, " ");
+}

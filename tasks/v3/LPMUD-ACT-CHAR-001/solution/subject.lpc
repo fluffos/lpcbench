@@ -1,0 +1,9 @@
+int quit_requested = 0;
+
+void handle_page_key(string key) {
+    if (key == "q" || key == "Q") {
+        quit_requested = 1;
+    } else {
+        quit_requested = 0;
+    }
+}

@@ -1,0 +1,1 @@
+Given 'int square(int x) { return x * x; }', implement 'int invoke_directly(int val)' that assigns 'function f = square;' and calls 'f(val)' directly.

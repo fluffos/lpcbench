@@ -1,0 +1,7 @@
+#include <tests.h>
+inherit __DIR__ "subject";
+
+void do_tests() {
+    string *cols = ({ "name", "level", "score" });
+    ASSERT_EQ("name, level, score", join_csv(cols));
+}

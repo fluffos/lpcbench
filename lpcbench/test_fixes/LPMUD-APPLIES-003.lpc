@@ -1,0 +1,20 @@
+#include <tests.h>
+inherit __DIR__ "subject";
+
+void put_in(object what, object where) { evaluate(bind((: move_object, where :), what)); }
+
+void do_tests() {
+    object a = new("/single/void");
+    object b = new("/single/void");
+    ASSERT_EQ(1, clean_up(0));
+    ASSERT_EQ(1, clean_up(1));
+    put_in(a, this_object());
+    ASSERT_EQ(0, clean_up(0));
+    ASSERT_EQ(0, clean_up(1));
+    put_in(b, this_object());
+    ASSERT_EQ(0, clean_up(0));
+    destruct(a);
+    ASSERT_EQ(0, clean_up(0));
+    destruct(b);
+    ASSERT_EQ(1, clean_up(0));
+}

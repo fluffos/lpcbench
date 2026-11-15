@@ -1,0 +1,3 @@
+string check_calling_origin() {
+    return origin();
+}

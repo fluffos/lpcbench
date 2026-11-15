@@ -1,0 +1,1 @@
+Implement 'void safely_reclaim(object ob)' that destructs 'ob' using 'destruct(ob)' if 'ob' is a valid object.

@@ -1,0 +1,4 @@
+void init() {
+    add_action((: 1 :), "poke");
+}
+

@@ -1,0 +1,11 @@
+#include <tests.h>
+inherit __DIR__ "subject";
+
+void do_tests() {
+    int id;
+    string name;
+    int matched = parse_id_and_name("42 Arthur", ref id, ref name);
+    ASSERT_EQ(2, matched);
+    ASSERT_EQ(42, id);
+    ASSERT_EQ("Arthur", name);
+}

@@ -1,0 +1,3 @@
+int *wrap_with_bounds(int lower, int *values, int upper) {
+    return ({ lower, values..., upper });
+}

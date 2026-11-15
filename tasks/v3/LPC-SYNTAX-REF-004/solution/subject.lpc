@@ -1,0 +1,8 @@
+void increment(int ref x) {
+    x++;
+}
+
+mapping bump_counter(mapping m, string key) {
+    increment(ref m[key]);
+    return m;
+}

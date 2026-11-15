@@ -1,0 +1,7 @@
+string classify_number(int val) {
+    switch (val) {
+        case ..0: return "non-positive";
+        case 1..99: return "standard";
+        case 100..: return "high";
+    }
+}

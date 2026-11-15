@@ -1,0 +1,14 @@
+#include <tests.h>
+inherit __DIR__ "subject";
+
+int refreshed = 0;
+void refresh_monsters() { refreshed++; }
+
+void do_tests() {
+    reset();
+    ASSERT_EQ(1, query_resets());
+    ASSERT_EQ(1, refreshed);
+    reset();
+    ASSERT_EQ(2, query_resets());
+    ASSERT_EQ(2, refreshed);
+}

@@ -1,0 +1,3 @@
+string resolve_priority() {
+    return "local -> simul_efun -> efun";
+}

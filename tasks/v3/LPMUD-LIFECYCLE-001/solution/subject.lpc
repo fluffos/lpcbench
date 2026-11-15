@@ -1,0 +1,3 @@
+int is_clone_instance(object ob) {
+    return clonep(ob);
+}

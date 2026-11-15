@@ -1,0 +1,3 @@
+int *increment_all(int *nums) {
+    return map_array(nums, (: $1 + 1 :));
+}

@@ -1,0 +1,6 @@
+mapping scale_values(mapping m, int multiplier) {
+    foreach (string k, int ref val in m) {
+        val *= multiplier;
+    }
+    return m;
+}

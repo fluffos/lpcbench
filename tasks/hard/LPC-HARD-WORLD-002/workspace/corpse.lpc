@@ -1,0 +1,31 @@
+// corpse.lpc: what a living leaves behind.
+//
+// Contract
+//  * It decays after decay_in(seconds): the room is told "<short> crumbles.\n",
+//    and what it holds stays in the room, oldest first (see container.lpc).
+//  * Removing the corpse early cancels the decay.
+inherit __DIR__ "container";
+
+private int handle;
+
+void set_of(string who) {
+    set_name("corpse");
+    set_short("the corpse of " + who);
+    set_weight(50);
+}
+
+void decay() {
+    object env = environment();
+    handle = 0;
+    if (env)
+        env->broadcast(this_object()->query_short() + " crumbles.\n", ({ }));
+    remove();
+}
+
+void decay_in(int seconds) { handle = call_out("decay", seconds); }
+
+int remove() {
+    if (handle)
+        remove_call_out(handle);
+    return container::remove();
+}

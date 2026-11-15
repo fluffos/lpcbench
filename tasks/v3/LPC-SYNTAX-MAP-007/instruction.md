@@ -1,0 +1,1 @@
+Implement 'mixed safe_lookup(mapping cfg)' that reads 'cfg?.profile?.id' using optional chaining '?.'.

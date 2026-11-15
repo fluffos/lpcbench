@@ -1,0 +1,3 @@
+int *append_id(int *ids, int new_id) {
+    return ids + ({ new_id });
+}

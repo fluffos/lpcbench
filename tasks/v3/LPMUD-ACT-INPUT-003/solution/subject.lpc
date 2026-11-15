@@ -1,0 +1,9 @@
+string captured_pw = "";
+
+void on_password_input(string pw) {
+    captured_pw = pw;
+}
+
+void prompt_password() {
+    input_to("on_password_input", 1);
+}

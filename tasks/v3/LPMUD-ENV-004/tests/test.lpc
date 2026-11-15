@@ -1,0 +1,14 @@
+#include <tests.h>
+inherit __DIR__ "subject";
+
+void put_in(object what, object where) { evaluate(bind((: move_object, where :), what)); }
+int id(string s) { return s == "magic_wand"; }
+
+void do_tests() {
+    object w = new(file_name(this_object()));
+    ASSERT_EQ(0, has_item_named(this_object(), "magic_wand"));
+    put_in(w, this_object());
+    ASSERT_EQ(1, has_item_named(this_object(), "magic_wand"));
+    ASSERT_EQ(0, has_item_named(this_object(), "rusty_nail"));
+    destruct(w);
+}

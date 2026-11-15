@@ -1,0 +1,10 @@
+int ran = 0;
+
+int do_clap(string arg) {
+    ran = 1;
+    return 1;
+}
+
+int execute_user_verb(string full_command) {
+    return command(full_command);
+}

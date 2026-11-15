@@ -1,0 +1,1 @@
+Implement 'varargs int sum_all(int base, int *extra...)' that adds 'base' and all numbers passed in 'extra' using the varargs rest parameter syntax.

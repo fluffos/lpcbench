@@ -1,0 +1,5 @@
+int can_override_efun(string file, string efun_name) {
+    if (file == "/adm/single/simul_efun") return 1;
+    if (efun_name == "destruct") return 0;
+    return 1;
+}

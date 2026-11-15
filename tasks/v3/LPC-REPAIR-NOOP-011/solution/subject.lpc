@@ -1,0 +1,4 @@
+// Confiscation: remove all copies of the item from the pack.
+string *purge_item(string *pack, string item) {
+    return pack - ({ item });
+}

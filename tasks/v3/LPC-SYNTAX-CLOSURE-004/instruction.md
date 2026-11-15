@@ -1,0 +1,1 @@
+Implement 'function get_adder()' that returns an anonymous function block adding two integers: 'function(int a, int b) { return a + b; }'.

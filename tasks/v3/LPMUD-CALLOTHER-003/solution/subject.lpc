@@ -1,0 +1,5 @@
+int get_val() { return 7; }
+
+int *broadcast_get_val(object *obs) {
+    return (int *)obs->get_val();
+}

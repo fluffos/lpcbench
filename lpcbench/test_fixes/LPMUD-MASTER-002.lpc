@@ -1,0 +1,17 @@
+#include <tests.h>
+inherit __DIR__ "subject";
+
+void do_tests() {
+    object v = compile_object("/d/virtual/map_10_20");
+    object w;
+    ASSERT(objectp(v));
+    ASSERT(clonep(v));
+    w = compile_object("/d/virtual/map_0_7");
+    ASSERT(objectp(w));
+    ASSERT(v != w);
+    destruct(v);
+    destruct(w);
+    ASSERT_EQ(0, compile_object("/d/city/kedian"));
+    ASSERT_EQ(0, compile_object("/d/city/map_10_20"));
+    ASSERT_EQ(0, compile_object("/u/bob/virtual/map_1_2"));
+}

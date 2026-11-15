@@ -1,0 +1,5 @@
+int query_hp() { return 100; }
+
+int verify_dispatch_equivalence(object ob) {
+    return (ob->query_hp() == call_other(ob, "query_hp"));
+}

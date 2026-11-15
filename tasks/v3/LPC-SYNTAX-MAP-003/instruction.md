@@ -1,0 +1,1 @@
+Implement 'mapping merge_configs(mapping defaults, mapping overrides)' that merges 'overrides' into 'defaults' using the LPC mapping addition operator (+).

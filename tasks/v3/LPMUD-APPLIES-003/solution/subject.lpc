@@ -1,0 +1,6 @@
+int clean_up(int inherited) {
+    if (sizeof(all_inventory(this_object())) > 0) {
+        return 0;
+    }
+    return 1;
+}

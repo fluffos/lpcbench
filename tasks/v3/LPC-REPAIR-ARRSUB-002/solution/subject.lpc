@@ -1,0 +1,5 @@
+string *drop_one(string *pack, string item) {
+    int i = member_array(item, pack);
+    if (i == -1) return pack;
+    return pack[0..i - 1] + pack[i + 1..];
+}

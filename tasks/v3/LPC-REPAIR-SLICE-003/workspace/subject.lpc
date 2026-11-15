@@ -1,0 +1,4 @@
+string strip_newline(string s) {
+    if (strlen(s) && s[<1] == '\n') return s[0..<1];
+    return s;
+}

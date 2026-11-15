@@ -1,0 +1,1 @@
+Implement 'string make_separator(string char_pattern, int count)' that repeats 'char_pattern' 'count' times

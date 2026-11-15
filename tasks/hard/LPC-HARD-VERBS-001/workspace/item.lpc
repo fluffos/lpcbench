@@ -1,0 +1,9 @@
+// item.lpc: a plain carried item with a value.
+inherit __DIR__ "object";
+
+void create() {
+    set_name("coin");
+    set_short("a coin");
+    set_weight(1);
+    set_value(1);
+}

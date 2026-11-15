@@ -1,0 +1,4 @@
+string replace_prefix(string str, string new_prefix) {
+    str[0..1] = new_prefix;
+    return str;
+}

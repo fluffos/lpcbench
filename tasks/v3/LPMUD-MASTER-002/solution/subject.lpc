@@ -1,0 +1,7 @@
+object compile_object(string file) {
+    int x, y;
+    if (sscanf(file, "/d/virtual/map_%d_%d", x, y) == 2) {
+        return new(__FILE__);
+    }
+    return 0;
+}

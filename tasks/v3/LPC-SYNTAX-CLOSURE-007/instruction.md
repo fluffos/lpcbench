@@ -1,0 +1,1 @@
+Implement 'function get_sizeof_efun()' that returns a function pointer referencing the driver efun 'sizeof'

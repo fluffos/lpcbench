@@ -1,0 +1,3 @@
+int *init_int_buffer(int size, int default_val) {
+    return allocate(size, default_val);
+}

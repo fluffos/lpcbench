@@ -1,0 +1,5 @@
+void safely_reclaim(object ob) {
+    if (objectp(ob)) {
+        destruct(ob);
+    }
+}

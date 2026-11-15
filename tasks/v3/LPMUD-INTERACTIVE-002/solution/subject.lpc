@@ -1,0 +1,9 @@
+string last_msg = "";
+
+void catch_tell(string msg) {
+    last_msg = msg;
+}
+
+string get_last_message() {
+    return last_msg;
+}

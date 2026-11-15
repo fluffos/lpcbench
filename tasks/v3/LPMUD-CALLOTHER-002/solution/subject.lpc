@@ -1,0 +1,5 @@
+string get_status() { return "operational"; }
+
+mixed call_on_path(string path, string func_name) {
+    return call_other(path, func_name);
+}

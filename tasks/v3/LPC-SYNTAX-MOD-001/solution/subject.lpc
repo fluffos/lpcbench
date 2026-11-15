@@ -1,0 +1,6 @@
+int saved_gold = 100;
+nosave int session_ticks = 50;
+
+int get_session_ticks() {
+    return session_ticks;
+}

@@ -1,0 +1,1 @@
+Declare a security function 'nomask int get_security_level()' returning 100, preventing shadows from overriding it.

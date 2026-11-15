@@ -1,0 +1,6 @@
+int ran = 0;
+
+int action_handler(string arg) {
+    ran = 1;
+    return 1;
+}

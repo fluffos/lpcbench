@@ -1,0 +1,3 @@
+string *drop_one(string *pack, string item) {
+    return pack - ({ item });
+}

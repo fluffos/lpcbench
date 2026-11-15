@@ -1,0 +1,10 @@
+int active = 0;
+
+void expire() {
+    active = 0;
+}
+
+void apply_buff(int seconds) {
+    active = 1;
+    call_out("expire", seconds);
+}

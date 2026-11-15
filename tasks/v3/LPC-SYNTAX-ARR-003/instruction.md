@@ -1,0 +1,1 @@
+Implement 'mixed *filter_blacklist(mixed *items, mixed *banned)' that removes all banned items

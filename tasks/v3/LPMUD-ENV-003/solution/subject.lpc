@@ -1,0 +1,3 @@
+void move_to_location(object dest) {
+    move_object(dest);
+}

@@ -1,0 +1,6 @@
+int *double_elements_in_place(int *nums) {
+    foreach (int ref n in nums) {
+        n *= 2;
+    }
+    return nums;
+}

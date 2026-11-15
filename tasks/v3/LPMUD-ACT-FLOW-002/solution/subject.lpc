@@ -1,0 +1,17 @@
+int primary_ran = 0;
+int secondary_ran = 0;
+
+int secondary_jump(string arg) {
+    secondary_ran = 1;
+    return 1;
+}
+
+int primary_jump(string arg) {
+    primary_ran = 1;
+    return 1;
+}
+
+void init() {
+    add_action((: secondary_jump :), "jump");
+    add_action((: primary_jump :), "jump");
+}

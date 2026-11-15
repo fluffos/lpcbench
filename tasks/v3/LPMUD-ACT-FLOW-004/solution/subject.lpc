@@ -1,0 +1,10 @@
+int pushed = 0;
+
+int do_push(string arg) {
+    pushed = 1;
+    return 1;
+}
+
+void init() {
+    add_action((: do_push :), "push");
+}

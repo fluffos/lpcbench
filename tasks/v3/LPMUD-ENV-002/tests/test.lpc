@@ -1,0 +1,15 @@
+#include <tests.h>
+inherit __DIR__ "subject";
+
+void put_in(object what, object where) { evaluate(bind((: move_object, where :), what)); }
+
+void do_tests() {
+    object a = new("/single/void");
+    object b = new("/single/void");
+    ASSERT_EQ(0, count_items_inside(this_object()));
+    put_in(a, this_object());
+    put_in(b, this_object());
+    ASSERT_EQ(2, count_items_inside(this_object()));
+    destruct(a);
+    destruct(b);
+}

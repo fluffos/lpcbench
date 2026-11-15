@@ -1,0 +1,1 @@
+Implement 'int sum_mapping_values(mapping m)' that computes the sum of all integer values in 'm'

@@ -1,0 +1,6 @@
+// rage.lpc
+inherit __DIR__ "effect";
+
+string query_effect() { return "rage"; }
+
+int query_attack() { return 2 * query_shadowing(this_object())->query_attack(); }

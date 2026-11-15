@@ -1,0 +1,9 @@
+#include <tests.h>
+inherit __DIR__ "subject";
+
+void do_tests() {
+    mapping m1 = ([ "timeout": 0 ]);
+    mapping m2 = ([]);
+    ASSERT_EQ(0, get_timeout(m1, 60));
+    ASSERT_EQ(60, get_timeout(m2, 60));
+}

@@ -1,0 +1,3 @@
+string read_nested_dot(mapping m) {
+    return m.user.name;
+}

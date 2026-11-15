@@ -1,0 +1,7 @@
+void make_creature_living() {
+    enable_commands();
+}
+
+int is_alive() {
+    return living(this_object());
+}

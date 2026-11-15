@@ -1,0 +1,5 @@
+string process_input(string raw_cmd) {
+    if (raw_cmd == "n") return "go north";
+    if (raw_cmd == "s") return "go south";
+    return raw_cmd;
+}

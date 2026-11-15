@@ -1,0 +1,7 @@
+nosave int is_enabled = 0;
+
+void safe_enable_living() {
+    if (is_enabled) return;
+    is_enabled = 1;
+    enable_commands();
+}

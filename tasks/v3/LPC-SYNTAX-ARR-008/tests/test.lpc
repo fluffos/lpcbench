@@ -1,0 +1,8 @@
+#include <tests.h>
+inherit __DIR__ "subject";
+
+void do_tests() {
+    int *nums = ({ 0, 1, 2, 3 });
+    int *res = splice_middle(nums, ({ 99, 88 }));
+    ASSERT_EQ(({ 0, 99, 88, 3 }), res);
+}

@@ -1,0 +1,10 @@
+#include <tests.h>
+inherit __DIR__ "subject";
+
+void do_tests() {
+    ASSERT_EQ("look", strip_newline("look\n"));
+    ASSERT_EQ("look", strip_newline("look"));
+    ASSERT_EQ("", strip_newline(""));
+    ASSERT_EQ("", strip_newline("\n"));
+    ASSERT_EQ("a\n", strip_newline("a\n\n"));
+}

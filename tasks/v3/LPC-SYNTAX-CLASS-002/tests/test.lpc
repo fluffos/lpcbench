@@ -1,0 +1,8 @@
+#include <tests.h>
+inherit __DIR__ "subject";
+
+void do_tests() {
+    class Coord pt = make_coord(15, 25);
+    ASSERT_EQ(15, pt.x);
+    ASSERT_EQ(25, pt.y);
+}

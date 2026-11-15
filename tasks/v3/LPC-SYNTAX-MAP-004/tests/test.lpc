@@ -1,0 +1,7 @@
+#include <tests.h>
+inherit __DIR__ "subject";
+
+void do_tests() {
+    mapping data = ([ "user": ([ "name": "hero" ]) ]);
+    ASSERT_EQ("hero", read_nested_dot(data));
+}
